@@ -31,6 +31,8 @@ dependencies {
 
     testImplementation("io.micronaut:micronaut-http-client")
 
+    implementation("io.grpc:grpc-kotlin-stub:0.2.0")
+    compileOnly("io.grpc:grpc-stub:1.39.0")
 }
 
 
@@ -57,6 +59,7 @@ sourceSets {
     main {
         java {
             srcDirs("build/generated/source/proto/main/grpc")
+            srcDirs("build/generated/source/proto/main/grpckt")
             srcDirs("build/generated/source/proto/main/java")
         }
     }
@@ -70,12 +73,16 @@ protobuf {
         id("grpc") {
             artifact = "io.grpc:protoc-gen-grpc-java:1.39.0"
         }
+        id("grpckt") {
+            artifact = "io.grpc:protoc-gen-grpc-kotlin:0.2.0:jdk7@jar"
+        }
     }
     generateProtoTasks {
         ofSourceSet("main").forEach {
             it.plugins {
                 // Apply the "grpc" plugin whose spec is defined above, without options.
                 id("grpc")
+                id("grpckt")
             }
         }
     }

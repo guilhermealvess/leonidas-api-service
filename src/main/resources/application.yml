@@ -1,3 +1,7 @@
 micronaut:
   application:
     name: apiService
+netty:
+  default:
+    allocator:
+      max-order: 3

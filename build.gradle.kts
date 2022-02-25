@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    kapt("io.micronaut:micronaut-http-validation")
     implementation("io.micronaut:micronaut-jackson-databind")
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut.grpc:micronaut-grpc-runtime")
@@ -89,6 +90,7 @@ protobuf {
 }
 micronaut {
     testRuntime("junit5")
+    runtime("netty")
     processing {
         incremental(true)
         annotations("com.leo.*")

@@ -1,7 +1,15 @@
 micronaut:
   application:
     name: apiService
+  server:
+    port: 8088
 netty:
   default:
     allocator:
       max-order: 3
+api-auth-jwt:
+  host: localhost
+  port: 50052
+  credential: "fgPyCKmxIubeYTNDtjAyRRDedMiyLpru-cjiOgjhYeVwBTCMLfrDGXqwpzwVGqMZc"
+  key: "bdaabeaf-1a03-53bf-9755-83df56d81e4a"
+  projectId: "621fa649aa2a640cfa7c6c7c"

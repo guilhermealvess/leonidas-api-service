@@ -1,16 +1,5 @@
 package com.leo.controller.schema
 
-class LoginRequestSchema {
-    private var username: String = ""
+class LoginRequestSchema(var username: String, var password: String)
 
-    private var password: String = ""
-
-    fun getUsername() = username
-
-    fun getPassword() = password
-}
-
-class LoginResponseSchema(token: String, msgError: String) {
-    var token = token
-    var msgError = msgError
-}
+class LoginResponseSchema(var token: String, var msgError: String)

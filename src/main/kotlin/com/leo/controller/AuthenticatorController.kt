@@ -21,7 +21,7 @@ class AuthenticatorController(val applicationProperties: ApplicationProperties) 
     @Produces(MediaType.APPLICATION_JSON)
     suspend fun login(loginSchema: LoginRequestSchema): HttpResponse<Any> {
         try {
-            val signInResponse = AuthtenticatorJWT(applicationProperties).signIn( loginSchema.getUsername(), loginSchema.getPassword() )
+            val signInResponse = AuthtenticatorJWT(applicationProperties).signIn( loginSchema.username, loginSchema.password )
             val status = if(signInResponse.success) 200 else 403
 
             return HttpResponse.ok<Any>(LoginResponseSchema(signInResponse.token, signInResponse.error)).status(status)

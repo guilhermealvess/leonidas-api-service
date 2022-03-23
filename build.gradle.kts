@@ -27,6 +27,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
+    implementation("org.hibernate:hibernate-core:3.6.7.Final")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
@@ -34,6 +35,10 @@ dependencies {
 
     implementation("io.grpc:grpc-kotlin-stub:0.2.0")
     compileOnly("io.grpc:grpc-stub:1.39.0")
+
+    val micronautVersion = "3.2.1"
+    annotationProcessor("io.micronaut:micronaut-inject-java:$micronautVersion")
+    //compile("io.micronaut:micronaut-aop:$micronautVersion")
 }
 
 
@@ -96,5 +101,3 @@ micronaut {
         annotations("com.leo.*")
     }
 }
-
-

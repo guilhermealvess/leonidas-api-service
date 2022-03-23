@@ -12,3 +12,7 @@ out/
 .settings
 .classpath
 .factorypath
+
+.vscode/
+venv/
+__pycache__/

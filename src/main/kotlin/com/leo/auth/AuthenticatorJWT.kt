@@ -8,7 +8,7 @@ import com.leo.AuthenticatorGrpcKt
 
 import io.grpc.ManagedChannelBuilder
 
-class AuthtenticatorJWT(val applicationProperties: ApplicationProperties){
+class AuthenticatorJWT(val applicationProperties: ApplicationProperties){
 
     suspend fun signIn(username: String, password: String): SigninReply {
         val credential = applicationProperties.credential

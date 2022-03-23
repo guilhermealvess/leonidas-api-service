@@ -1,7 +1,7 @@
 package com.leo.controller
 
 import com.leo.ApplicationProperties
-import com.leo.auth.AuthtenticatorJWT
+import com.leo.auth.AuthenticatorJWT
 import com.leo.controller.schema.LoginRequestSchema
 import com.leo.controller.schema.LoginResponseSchema
 
@@ -21,7 +21,7 @@ class AuthenticatorController(val applicationProperties: ApplicationProperties) 
     @Produces(MediaType.APPLICATION_JSON)
     suspend fun login(loginSchema: LoginRequestSchema): HttpResponse<Any> {
         try {
-            val signInResponse = AuthtenticatorJWT(applicationProperties).signIn( loginSchema.username, loginSchema.password )
+            val signInResponse = AuthenticatorJWT(applicationProperties).signIn( loginSchema.username, loginSchema.password )
             val status = if(signInResponse.success) 200 else 403
 
             return HttpResponse.ok<Any>(LoginResponseSchema(signInResponse.token, signInResponse.error)).status(status)
@@ -35,7 +35,7 @@ class AuthenticatorController(val applicationProperties: ApplicationProperties) 
     @Produces(MediaType.APPLICATION_JSON)
     suspend fun verify(@Header("AUTHORIZATION") authorization: String): MutableHttpResponse<Any>? {
         try {
-            val user = AuthtenticatorJWT(applicationProperties).verify( authorization )
+            val user = AuthenticatorJWT(applicationProperties).verify( authorization )
 
             return HttpResponse.ok<Any>(user).status(200)
         } catch (e: Exception) {

@@ -8,7 +8,7 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 import java.io.Serializable
 
-@Entity
+@Entity(name = "STATUS_PACKAGE")
 data class StatusPackageDto(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,

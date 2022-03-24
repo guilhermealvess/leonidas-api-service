@@ -13,10 +13,22 @@ data class StatusPackageDto(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "IS_ACTIVE")
     val isActive: Boolean? = null,
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "NAME")
     val name: String? = null,
+
+    @Column(nullable = false, name = "CREATED_AT")
+    val createdAt: Date? = null,
+
+    @Column(nullable = false, name = "CREATED_BY")
+    val createdBy: String? = null,
+
+    @Column(nullable = true, name = "UPDATED_AT")
+    val updatedAt: Date? = null,
+
+    @Column(nullable = true, name = "UPDATED_BY")
+    val updatedBy: String? = null
 
 ): Serializable

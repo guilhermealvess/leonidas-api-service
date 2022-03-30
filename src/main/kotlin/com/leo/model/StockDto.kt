@@ -3,12 +3,14 @@ package com.leo.model
 import java.util.Date
 import javax.persistence.Column
 import javax.persistence.Entity
+import javax.persistence.Table
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import java.io.Serializable
 
-@Entity(name = "STOCK")
+@Entity
+@Table(name= "STOCK")
 data class StockDto(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
@@ -19,8 +21,8 @@ data class StockDto(
     @Column(nullable = false, name = "SKU")
     val sku: String? = null,
 
-    @Column(nullable = false, name = "IS_ACTIVE")
-    val isActive: String? = null,
+    @Column(nullable = false, name = "IS_ACTIVED")
+    val isActived: String? = null,
 
     @Column(nullable = false, name = "CREATED_AT")
     val createdAt: Date? = null,

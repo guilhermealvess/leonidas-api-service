@@ -7,8 +7,10 @@ import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import java.io.Serializable
+import javax.persistence.Table
 
-@Entity(name = "ADDRESS")
+@Entity
+@Table(name = "ADDRESS")
 data class AddressDto(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
@@ -22,8 +24,8 @@ data class AddressDto(
     @Column(nullable = false, name = "HOME_NUMBER")
     val homeNumber: String? = null,
 
-    @Column(nullable = true, name = "FULLFILMENT")
-    val fullfilment: String? = null,
+    @Column(nullable = true, name = "COMPLEMENT")
+    val complement: String? = null,
 
     @Column(nullable = false, name = "DISTRICT")
     val district: String? = null,
@@ -36,6 +38,9 @@ data class AddressDto(
 
     @Column(nullable = false, name = "STATE_UF")
     val stateUf: String? = null,
+
+    @Column(nullable = false, name = "IS_ACTIVED")
+    val isActive: Boolean? = null,
 
     @Column(nullable = false, name = "CREATED_AT")
     val createdAt: Date? = null,

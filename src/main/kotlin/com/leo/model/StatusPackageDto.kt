@@ -13,8 +13,8 @@ data class StatusPackageDto(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 
-    @Column(nullable = false, name = "IS_ACTIVE")
-    val isActive: Boolean? = null,
+    @Column(nullable = false, name = "IS_ACTIVED")
+    val isActived: Boolean? = null,
 
     @Column(nullable = false, name = "NAME")
     val name: String? = null,

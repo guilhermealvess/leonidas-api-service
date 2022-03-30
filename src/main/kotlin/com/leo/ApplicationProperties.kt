@@ -21,8 +21,4 @@ class ApplicationProperties {
     @NotBlank
     lateinit var projectId: String
 
-    fun exportEnv() {
-        System.getenv()
-    }
-
 }

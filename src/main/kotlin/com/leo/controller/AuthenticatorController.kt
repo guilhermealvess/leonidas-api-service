@@ -27,7 +27,7 @@ class AuthenticatorController(val applicationProperties: ApplicationProperties) 
             return HttpResponse.ok<Any>(LoginResponseSchema(signInResponse.token, signInResponse.error)).status(status)
         } catch (e: Exception) {
 
-            return HttpResponse.badRequest()
+            return HttpResponse.badRequest<Any?>().body(e.message)
         }
     }
 
@@ -40,7 +40,7 @@ class AuthenticatorController(val applicationProperties: ApplicationProperties) 
             return HttpResponse.ok<Any>(user).status(200)
         } catch (e: Exception) {
 
-            return HttpResponse.badRequest()
+            return HttpResponse.badRequest<Any?>().body(e.message)
         }
     }
 }

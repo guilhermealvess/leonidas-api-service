@@ -11,7 +11,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "PRODUCT_CATEGORY")
-data class ProductCategoryDto (
+data class ProductCategoryModel (
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 

@@ -11,7 +11,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "ADDRESS")
-data class AddressDto(
+data class AddressModel(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 

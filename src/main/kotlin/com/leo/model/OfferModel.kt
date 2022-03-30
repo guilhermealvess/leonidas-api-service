@@ -10,13 +10,22 @@ import java.io.Serializable
 import javax.persistence.Table
 
 @Entity
-@Table(name = "MANUFACTURER")
-data class ManufacturerDto(
+@Table(name = "OFFER")
+data class OfferModel(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 
-    @Column(nullable = false, name = "NAME")
-    val name: String? = null,
+    @Column(nullable = false, name = "FK_PRODUCT_ID")
+    val productId: Long? = null,
+
+    @Column(nullable = false, name = "PRICE_REAL")
+    val priceReal: Long? = null,
+
+    @Column(nullable = false, name = "ISSUE_DATE")
+    val issueDate: Date? = null,
+
+    @Column(nullable = false, name = "OFF_PERCENT")
+    val offPercent: Double? = null,
 
     @Column(nullable = false, name = "CREATED_AT")
     val createdAt: Date? = null,

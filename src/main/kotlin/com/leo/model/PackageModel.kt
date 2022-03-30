@@ -11,7 +11,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "PACKAGE")
-data class PackageDto(
+data class PackageModel(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 

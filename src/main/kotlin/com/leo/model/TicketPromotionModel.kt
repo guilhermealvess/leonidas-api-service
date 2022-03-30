@@ -3,26 +3,23 @@ package com.leo.model
 import java.util.Date
 import javax.persistence.Column
 import javax.persistence.Entity
-import javax.persistence.Table
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import java.io.Serializable
+import javax.persistence.Table
 
 @Entity
-@Table(name= "STOCK")
-data class StockDto(
+@Table(name = "TICKET_PROMOTION")
+data class TicketPromotionModel(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 
-    @Column(nullable = false, name = "FK_PRODUCT_ID")
-    val fkProductId: String? = null,
+    @Column(nullable = false, name = "EXPIRATION")
+    val expiration: Date? = null,
 
-    @Column(nullable = false, name = "SKU")
-    val sku: String? = null,
-
-    @Column(nullable = false, name = "IS_ACTIVED")
-    val isActived: String? = null,
+    @Column(nullable = false, name = "OFF_PERCENT")
+    val offPercent: Double? = null,
 
     @Column(nullable = false, name = "CREATED_AT")
     val createdAt: Date? = null,

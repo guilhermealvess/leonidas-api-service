@@ -9,7 +9,7 @@ import javax.persistence.Id
 import java.io.Serializable
 
 @Entity(name = "STATUS_PACKAGE")
-data class StatusPackageDto(
+data class StatusPackageModel(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 

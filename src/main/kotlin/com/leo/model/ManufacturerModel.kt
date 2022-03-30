@@ -10,16 +10,13 @@ import java.io.Serializable
 import javax.persistence.Table
 
 @Entity
-@Table(name = "TICKET_PROMOTION")
-data class TicketPromotionDto(
+@Table(name = "MANUFACTURER")
+data class ManufacturerModel(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 
-    @Column(nullable = false, name = "EXPIRATION")
-    val expiration: Date? = null,
-
-    @Column(nullable = false, name = "OFF_PERCENT")
-    val offPercent: Double? = null,
+    @Column(nullable = false, name = "NAME")
+    val name: String? = null,
 
     @Column(nullable = false, name = "CREATED_AT")
     val createdAt: Date? = null,

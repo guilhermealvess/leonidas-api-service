@@ -11,7 +11,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "ACCOUNT")
-data class AccountDto(
+data class AccountModel(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
 
